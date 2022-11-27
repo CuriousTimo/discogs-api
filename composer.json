@@ -15,9 +15,9 @@
         }
     ],
     "require": {
-        "php" : "^7.4",
-        "illuminate/support": "^7.7",
-        "guzzlehttp/guzzle":"^6.5",
+        "php" : "^7.4|^8.0",
+        "illuminate/support": ">=7.7",
+        "guzzlehttp/guzzle":"^7.0.1",
         "mockery/mockery": "^1"
     },
     "require-dev": {
