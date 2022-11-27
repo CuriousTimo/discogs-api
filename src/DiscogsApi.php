@@ -54,6 +54,18 @@ class DiscogsApi
         return $this->get("/users/{$userName}/collection/folders");
     }
 
+    public function userCollectionFolder(string $userName, int $folder_id, int $page = null, int $perPage = null, string $sort = null, string $sortOrder = null)
+    {
+        $query = [
+            'page' => $page ?? 1,
+            'per_page' => $perPage ?? 50,
+            'sort' => $sort ?? 'catno',
+            'sort_order' => $sortOrder ?? 'asc',
+        ];
+
+        return $this->getAuthenticated("/users/{$userName}/collection/folders/{$folder_id}/releases", '', $query);
+    }    
+    
     public function getMarketplaceListing(string $id)
     {
         return $this->get("/marketplace/listings/{$id}");
